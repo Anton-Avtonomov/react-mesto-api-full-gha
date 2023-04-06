@@ -85,7 +85,7 @@ function App() {
     // );
     const token = localStorage.getItem("tokenUser");
     if (!token) {
-      return
+      return;
     } else if (token) {
       checkToken(); // Проверка токена
     } else {
@@ -125,11 +125,18 @@ function App() {
         closeAllPopups();
       }
     }
+    function closeByClickOverlay(evt) {
+      if (evt.target.classList.contains("popup__container")) {
+        closeAllPopups();
+      }
+    }
     if (isOpen) {
       // навешиваем только при открытии
       document.addEventListener("keydown", closeByEscape);
+      document.addEventListener("click", closeByClickOverlay);
       return () => {
         document.removeEventListener("keydown", closeByEscape);
+        document.removeEventListener("click", closeByClickOverlay);
       };
     }
   }, [isOpen]);
