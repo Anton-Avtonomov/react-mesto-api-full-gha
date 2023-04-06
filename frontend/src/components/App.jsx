@@ -125,7 +125,7 @@ function App() {
         closeAllPopups();
       }
     }
-    function closeByClickOverlay(evt) {
+    function closeByOverlay(evt) {
       if (evt.target.classList.contains("popup__container")) {
         closeAllPopups();
       }
@@ -133,10 +133,10 @@ function App() {
     if (isOpen) {
       // навешиваем только при открытии
       document.addEventListener("keydown", closeByEscape);
-      document.addEventListener("click", closeByClickOverlay);
+      document.addEventListener("click", closeByOverlay);
       return () => {
         document.removeEventListener("keydown", closeByEscape);
-        document.removeEventListener("click", closeByClickOverlay);
+        document.removeEventListener("keydown", closeByOverlay);
       };
     }
   }, [isOpen]);

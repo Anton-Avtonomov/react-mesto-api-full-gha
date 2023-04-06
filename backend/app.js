@@ -73,7 +73,6 @@ async function startServer() {
 
     app.listen(PORT, () => { // Устанавливаем слушатель порта!
       console.log(`Сервер запущен на порту: ${PORT}, в ${new Date()}`); // Проверка сервера
-      console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
     });
   } catch (err) {
     console.log(new Error('Возникла ошибка при запуске сервера!'));
