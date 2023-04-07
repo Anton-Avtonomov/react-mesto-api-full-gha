@@ -1,6 +1,6 @@
 /* eslint-disable consistent-return */
 
-const { NODE_ENV, JWT_SECRET } = process.env;
+const { NODE_ENV, JWT_SECRET = 'JWT_SECRET' } = process.env;
 const bcrypt = require('bcrypt'); // импортируем модуль хеширования
 const jwt = require('jsonwebtoken'); // импортируем модуль jsonwebtoken
 const Users = require('../models/user');// импортируем модуль схемы юзера
