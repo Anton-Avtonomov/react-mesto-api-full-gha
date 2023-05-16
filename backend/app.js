@@ -23,6 +23,7 @@ const options = {
   origin: [
     'http://localhost:3000',
     'https://mesto-avtonomov.nomoredomains.work',
+    'http://mesto-avtonomov.nomoredomains.work',
   ],
   method: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
   preflightContinue: false,
